@@ -14,11 +14,11 @@ def execute(attack_config=None, plan_id=None):
     :param attack_config: **Dict** with attack configuration
     :param plan_id: **String** plan id for the plan containing the executor
     """
-    attack_class = CMEManager.manager.attacks_store.get(attack_config.get('ref'))
+    attack_class = CMEManager.manager.attacks_store.get(str(attack_config.get('ref')))
 
     if attack_class is None:
         msg = '[PlanID %s] Attack ref %s not loaded in the store ' \
-              % (plan_id, attack_config.get('ref'))
+              % (plan_id, str(attack_config.get('ref')))
         log.debug(msg)
         raise ValueError(msg)
 
