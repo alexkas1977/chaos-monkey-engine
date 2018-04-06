@@ -1,4 +1,4 @@
-class Attack:
+class Attack(object):
     """
     Base class for attacks. Every attack must extend from this class
     """

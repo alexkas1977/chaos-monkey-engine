@@ -6,7 +6,7 @@ Every planner must extend Planner class
 from chaosmonkey.engine.cme_manager import manager
 
 
-class Planner:
+class Planner(object):
     """
     Planner interface
     Planners are responsible for scheduling jobs that executes attacks

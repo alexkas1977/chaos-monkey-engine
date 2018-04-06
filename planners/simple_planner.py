@@ -65,7 +65,8 @@ class SimplePlanner(Planner):
         random.seed()
         attack_schedule = []
         for start, end in self._split_date_range(start_date, end_date, planer_args["times"]):
-            attack_schedule.append(random.uniform(start, end))
+	    tmp_schedule = random.uniform(int(start.strftime('%s')), int(end.strftime('%s')))
+            attack_schedule.append(datetime.fromtimestamp(tmp_schedule))
 
         return attack_schedule
 

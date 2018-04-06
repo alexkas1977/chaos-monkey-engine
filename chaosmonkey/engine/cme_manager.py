@@ -166,8 +166,8 @@ class CMEManager:
         :param attack_config:       Dict with attack config
         """
         try:
-            planner_class = self._planners_store.get(planner_config.get("ref"))
-            attack_class = self._attacks_store.get(attack_config.get("ref"))
+            planner_class = self._planners_store.get(str(planner_config.get("ref")))
+            attack_class = self._attacks_store.get(str(attack_config.get("ref")))
         except ModuleLookupError as e:
             raise APIError("invalid planner %s" % e.message)
 
